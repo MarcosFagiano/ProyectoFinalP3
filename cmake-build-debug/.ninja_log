@@ -1,0 +1,18 @@
+# ninja log v5
+1	305	1697644239477763502	CMakeFiles/Procesador_inventario.dir/data.cpp.o	d358c60cdbe75d5c
+1	275	1697635856324053944	CMakeFiles/parcial2.dir/main.cpp.o	d0b8872614433048
+0	327	1697637656986764329	CMakeFiles/parcial2.dir/data.cpp.o	3622d677a7f00492
+1	401	1697577276341342298	CMakeFiles/parcial2.dir/display.cpp.o	4f3013eb9c81c65f
+265	392	1697820354657308170	Procesador_inventario	9704642c882107f4
+1	328	1697819725459317316	CMakeFiles/Procesador_inventario.dir/display.cpp.o	5d08013d57db0e36
+1	264	1697820354537283865	CMakeFiles/Procesador_inventario.dir/main.cpp.o	11322c24b2fc1a8d
+1	312	1697820872731659285	CMakeFiles/Procesador_inventario.dir/main.cpp.o	11322c24b2fc1a8d
+312	415	1697820872831624363	Procesador_inventario	9704642c882107f4
+0	280	1697820903928756986	CMakeFiles/Procesador_inventario.dir/main.cpp.o	11322c24b2fc1a8d
+280	394	1697820904044716452	Procesador_inventario	9704642c882107f4
+0	263	1697820975983799815	CMakeFiles/Procesador_inventario.dir/main.cpp.o	11322c24b2fc1a8d
+263	380	1697820976099784098	Procesador_inventario	9704642c882107f4
+1	260	1697821014344033993	CMakeFiles/Procesador_inventario.dir/main.cpp.o	11322c24b2fc1a8d
+260	359	1697821014444056611	Procesador_inventario	9704642c882107f4
+0	264	1697821172709610854	CMakeFiles/Procesador_inventario.dir/main.cpp.o	11322c24b2fc1a8d
+264	372	1697821172813611385	Procesador_inventario	9704642c882107f4
