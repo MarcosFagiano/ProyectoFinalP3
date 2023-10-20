@@ -6,7 +6,7 @@
 #define PARCIAL2_DATA_H
 
 #include <string>
-#include "list"
+#include "librerias/Lista/Lista.h"
 class data {
 private:
     const unsigned int MAX_CHAR = 256;
@@ -20,7 +20,7 @@ private:
         unsigned int m_store_4{};
         unsigned int m_store_5{};
     };
-    std::list<struct product> inventory;
+    Lista<struct product> inventory;
 
 public:
     data(std::string);

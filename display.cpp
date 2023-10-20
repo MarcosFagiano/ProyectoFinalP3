@@ -6,9 +6,9 @@
 
 #include "iostream"
 #include "display.h"
-void argument_menu(){
+void argument_menu(char **argv){
     std::cout << "Uso normal:\n"
-                 "Procesador_inventario.exe [Argumentos] inventariofisico.csv\n"
+                 << argv[0] << "[Argumentos] inventariofisico.csv\n"
                  "Argumentos posibles:\n"
                  "\t-total_art_dif --> Cantidad total de artículos diferentes.\n"
                  "\t-total_art --> Cantidad total de artículos.\n"
