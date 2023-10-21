@@ -3,36 +3,45 @@
 //
 
 #include <sstream>
+#include <vector>
 #include "data.h"
 #include "fstream"
-data::data(std::string file_name) {
+
+data::data(const std::string& file_name){
+
     std::ifstream din;
     std::string buffer_linea;
-//    Lista<Lista<std::string>> data;
+    std::vector<std::string> data;
     std::string header;
-    Lista<std::string> data;
+
+    m_file_name=file_name;
 
     din.open(file_name);
-    if(!din.is_open()){
-        throw   "No se ha podido abrir el archivo. ";
+    if (!din.is_open()) {
+        throw "No se ha podido abrir el archivo. ";
     }
     getline(din, header);
+    std::cout << header;
 
-    std::cout <<  header;
+    std::vector<std::string> fila;
+    while (std::getline(din, buffer_linea)) {
+        std::stringstream stringStream(buffer_linea);
+              std::string valor;
 
-    Lista<std::string> fila;
-    while (std::getline(din, buffer_linea)){
-        //std::stringstream stringStream(buffer_linea);
-        //      std::string valor;
-
-/*        while(std::getline(stringStream, valor, ',')){
-            */fila.insertarUltimo(buffer_linea);/*
+        while(std::getline(stringStream, valor, ',')){
+            fila.push_back(buffer_linea);
         }
-        data.insertarPrimero(fila);*/
+        data.push_back();
     }
-
-    fila.print();
     din.close();
+}
+
+void data::save_report() {
+
+};
+
+data::~data(){
+    save_report();
 }
 
 

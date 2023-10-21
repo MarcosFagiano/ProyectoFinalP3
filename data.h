@@ -9,7 +9,8 @@
 #include "librerias/Lista/Lista.h"
 class data {
 private:
-    const unsigned int MAX_CHAR = 256;
+    const unsigned int MAX_CHAR = 196;
+    std::string m_file_name;
     struct product{
         char *m_group=nullptr;
         char *m_bar_code=nullptr;
@@ -20,10 +21,12 @@ private:
         unsigned int m_store_4{};
         unsigned int m_store_5{};
     };
-    Lista<struct product> inventory;
 
 public:
-    data(std::string);
+    explicit data(const std::string&);
+    ~data();
+
+    void save_report();
 
 };
 
