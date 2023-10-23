@@ -4,9 +4,10 @@
 
 
 
-#include "data.h"
-data::data(const std::string& file_name)
-        :m_file_name{file_name}{
+#include "Data.h"
+Data::Data(const std::string &file_name, char *& o_argv)
+        : m_file_name{file_name},
+        m_argv{o_argv== nullptr?"test":o_argv} {
 
     std::ifstream din;
     din.open(file_name);
@@ -29,7 +30,6 @@ data::data(const std::string& file_name)
     header_buffer.clear();
     raw_header.clear();
     m_depostit_number=header.size()-3;
-    std::cout << m_depostit_number << std:: endl;
 
     std::vector<std::string> row_buffer;
     while (std::getline(din, raw_buffer)) {
@@ -47,17 +47,22 @@ data::data(const std::string& file_name)
     din.close();
 }
 
-void data::save_report() {
+
+
+void Data::save_report() {
 
 };
 
-data::~data(){
+Data::~Data(){
     save_report();
 }
 
-void data::print(int m, int n) {
-    std::cout << m_data[m][n] << std::endl;
+std::string Data::get_element(int m, int n) {
+    return m_data[m][n];
 }
+
+
+
 
 
 

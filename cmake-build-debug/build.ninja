@@ -61,8 +61,14 @@ build CMakeFiles/Procesador_inventario.dir/display.cpp.o: CXX_COMPILER__Procesad
   OBJECT_DIR = CMakeFiles/Procesador_inventario.dir
   OBJECT_FILE_DIR = CMakeFiles/Procesador_inventario.dir
 
-build CMakeFiles/Procesador_inventario.dir/data.cpp.o: CXX_COMPILER__Procesador_inventario_unscanned_Debug /home/maverick/Documents/college/programacion$ 3/parciales/ProyectoFinalP3/data.cpp || cmake_object_order_depends_target_Procesador_inventario
-  DEP_FILE = CMakeFiles/Procesador_inventario.dir/data.cpp.o.d
+build CMakeFiles/Procesador_inventario.dir/Data.cpp.o: CXX_COMPILER__Procesador_inventario_unscanned_Debug /home/maverick/Documents/college/programacion$ 3/parciales/ProyectoFinalP3/Data.cpp || cmake_object_order_depends_target_Procesador_inventario
+  DEP_FILE = CMakeFiles/Procesador_inventario.dir/Data.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Procesador_inventario.dir
+  OBJECT_FILE_DIR = CMakeFiles/Procesador_inventario.dir
+
+build CMakeFiles/Procesador_inventario.dir/Algorithm.cpp.o: CXX_COMPILER__Procesador_inventario_unscanned_Debug /home/maverick/Documents/college/programacion$ 3/parciales/ProyectoFinalP3/Algorithm.cpp || cmake_object_order_depends_target_Procesador_inventario
+  DEP_FILE = CMakeFiles/Procesador_inventario.dir/Algorithm.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/Procesador_inventario.dir
   OBJECT_FILE_DIR = CMakeFiles/Procesador_inventario.dir
@@ -75,7 +81,7 @@ build CMakeFiles/Procesador_inventario.dir/data.cpp.o: CXX_COMPILER__Procesador_
 #############################################
 # Link the executable Procesador_inventario
 
-build Procesador_inventario: CXX_EXECUTABLE_LINKER__Procesador_inventario_Debug CMakeFiles/Procesador_inventario.dir/main.cpp.o CMakeFiles/Procesador_inventario.dir/display.cpp.o CMakeFiles/Procesador_inventario.dir/data.cpp.o
+build Procesador_inventario: CXX_EXECUTABLE_LINKER__Procesador_inventario_Debug CMakeFiles/Procesador_inventario.dir/main.cpp.o CMakeFiles/Procesador_inventario.dir/display.cpp.o CMakeFiles/Procesador_inventario.dir/Data.cpp.o CMakeFiles/Procesador_inventario.dir/Algorithm.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Procesador_inventario.dir
   POST_BUILD = :

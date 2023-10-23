@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(Procesador_inventario
         main.cpp
         display.cpp
-        data.h
-        data.cpp
-        display.h)
+        Data.h
+        Data.cpp
+        display.h
+        Algorithm.h
+        Algorithm.cpp)

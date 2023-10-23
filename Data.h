@@ -10,23 +10,22 @@
 #include <vector>
 #include "fstream"
 #include <iostream>
-
-class data {
-private:
+class Data{
+protected:
     const unsigned int MAX_CHAR = 196;
     std::string m_file_name;
     unsigned int m_depostit_number;
+    std::string m_argv;
     std::vector<std::vector<std::string>> m_data;
 
 
 
 public:
-    explicit data(const std::string&);
-    ~data();
+    Data(const std::string &, char* &);
+    ~Data();
 
     void save_report();
-    void print(int,int);
-    //friend &std::ostream operator<<(std::ostream &os, T& obj);
+    std::string get_element(int, int);
 
 };
 

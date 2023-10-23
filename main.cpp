@@ -5,7 +5,7 @@
 #include "ctime"
 #include "iostream"
 #include "display.h"
-#include "data.h"
+#include "Algorithm.h"
 
 int  main(int argc, char **argv){
 
@@ -17,18 +17,16 @@ int  main(int argc, char **argv){
     std::string file_name="../Inventariado Fisico.csv";//test
     //std::string file_name=argv[argc-1];//final
 
-    //creacion del objeto data, carga los valores del file_name a ram
-    data d(file_name);
+    //creacion del objeto Data, carga los valores del file_name a ram
+    Algorithm obj_1(file_name, argv[1]);
 
     t0=clock();
     // codigo a ejecutar TODO:
 
-    d.print(3,1);
-
-    /*if(argc==1){
+    if(argc==1){
         argument_menu(argv);
     }else{
-        //data d(file_name);
+        //Data d(file_name);
         char *arg_opt = argv[1];
         if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
             std::cout << "-total_art_dif" << std::endl;
@@ -45,7 +43,7 @@ int  main(int argc, char **argv){
         } else if (std::strcmp(arg_opt, "-max_stock") == 0) {
             std::cout << "-max_stock" << std::endl;
         }
-    }*/
+    }
     t1 = clock();
     double time = (double (t1-t0)/CLOCKS_PER_SEC);
 
