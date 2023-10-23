@@ -2,36 +2,47 @@
 // Created by maverick on 10/9/23.
 //
 
-#include <sstream>
-#include <vector>
-#include "data.h"
-#include "fstream"
 
-data::data(const std::string& file_name){
+
+#include "data.h"
+data::data(const std::string& file_name)
+        :m_file_name{file_name}{
 
     std::ifstream din;
-    std::string buffer_linea;
-    std::vector<std::string> data;
-    std::string header;
-
-    m_file_name=file_name;
-
     din.open(file_name);
     if (!din.is_open()) {
         throw "No se ha podido abrir el archivo. ";
     }
-    getline(din, header);
-    std::cout << header;
 
-    std::vector<std::string> fila;
-    while (std::getline(din, buffer_linea)) {
-        std::stringstream stringStream(buffer_linea);
-              std::string valor;
+    std::string raw_buffer;
+    std::string raw_header;
+    std::vector<std::string> header;
 
-        while(std::getline(stringStream, valor, ',')){
-            fila.push_back(buffer_linea);
+
+    getline(din, raw_header);
+    std::stringstream ss(raw_header);
+    std::string header_buffer;
+    while (getline(ss, header_buffer, ',')){
+        header.push_back(header_buffer);
+    }
+
+    header_buffer.clear();
+    raw_header.clear();
+    m_depostit_number=header.size()-3;
+    std::cout << m_depostit_number << std:: endl;
+
+    std::vector<std::string> row_buffer;
+    while (std::getline(din, raw_buffer)) {
+        std::stringstream stringStream(raw_buffer);
+        std::string element;
+
+        while(std::getline(stringStream, element, ',')){
+            row_buffer.push_back(element);
         }
-        data.push_back();
+        m_data.push_back(row_buffer);
+        row_buffer.clear();
+        raw_buffer.clear();
+        element.clear();
     }
     din.close();
 }
@@ -43,5 +54,11 @@ void data::save_report() {
 data::~data(){
     save_report();
 }
+
+void data::print(int m, int n) {
+    std::cout << m_data[m][n] << std::endl;
+}
+
+
 
 

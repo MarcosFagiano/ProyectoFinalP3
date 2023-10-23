@@ -23,13 +23,9 @@ int  main(int argc, char **argv){
     t0=clock();
     // codigo a ejecutar TODO:
 
+    d.print(3,1);
 
-    std::cout << "argc=" << argc << std::endl;
-    for(int i=0; i<argc; i++){
-                std::cout << "argv[" << i << "]=" << argv[i] << std::endl;
-    }
-
-    if(argc==1){
+    /*if(argc==1){
         argument_menu(argv);
     }else{
         //data d(file_name);
@@ -49,7 +45,7 @@ int  main(int argc, char **argv){
         } else if (std::strcmp(arg_opt, "-max_stock") == 0) {
             std::cout << "-max_stock" << std::endl;
         }
-    }
+    }*/
     t1 = clock();
     double time = (double (t1-t0)/CLOCKS_PER_SEC);
 

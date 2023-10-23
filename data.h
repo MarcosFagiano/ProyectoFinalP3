@@ -6,27 +6,27 @@
 #define PARCIAL2_DATA_H
 
 #include <string>
-#include "librerias/Lista/Lista.h"
+#include <sstream>
+#include <vector>
+#include "fstream"
+#include <iostream>
+
 class data {
 private:
     const unsigned int MAX_CHAR = 196;
     std::string m_file_name;
-    struct product{
-        char *m_group=nullptr;
-        char *m_bar_code=nullptr;
-        char *m_article=nullptr;
-        unsigned int m_store_1{};
-        unsigned int m_store_2{};
-        unsigned int m_store_3{};
-        unsigned int m_store_4{};
-        unsigned int m_store_5{};
-    };
+    unsigned int m_depostit_number;
+    std::vector<std::vector<std::string>> m_data;
+
+
 
 public:
     explicit data(const std::string&);
     ~data();
 
     void save_report();
+    void print(int,int);
+    //friend &std::ostream operator<<(std::ostream &os, T& obj);
 
 };
 
