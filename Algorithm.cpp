@@ -9,8 +9,7 @@ Algorithm::Algorithm(const std::string &file_name, char *&o_argv)
 
 }
 
-void Algorithm::print() {
-    std::cout << m_data[3][4] << std::endl;
-
+void Algorithm::print(int m, int n) {
+    std::cout << get_element(m, n) << std::endl;
 }
 

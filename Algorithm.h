@@ -11,12 +11,13 @@
 #include "Data.h"
 #include "utils.h"
 #include <iostream>
+#include <typeinfo>
 
-class Algorithm: Data {
+class Algorithm: protected Data {
 
 public:
     Algorithm(const std::string &, char *&);
-    void print();
+    void print(int,int);
 
 };
 

@@ -18,9 +18,6 @@ protected:
     std::string m_argv;
     std::vector<std::vector<std::string>> m_data;
 
-
-
-public:
     Data(const std::string &, char* &);
     ~Data();
 

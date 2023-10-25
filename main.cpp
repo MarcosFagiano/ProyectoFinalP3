@@ -21,7 +21,7 @@ int  main(int argc, char **argv){
     //creacion del objeto Data, carga los valores del file_name a ram
     Algorithm obj_1(file_name, argv[1]);
 
-    obj_1.print();
+    obj_1.print(0,6);
 
     t0=clock();
     // codigo a ejecutar TODO:

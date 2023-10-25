@@ -11,7 +11,7 @@
 #include <limits>
 
 template<typename T>
-T str_num(std::string &str) {
+T str_num(std::string str) {
     T result;
 
     result = std::stoi(str);
