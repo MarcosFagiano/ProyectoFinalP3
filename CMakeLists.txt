@@ -10,4 +10,5 @@ add_executable(Procesador_inventario
         Data.cpp
         display.h
         Algorithm.h
-        Algorithm.cpp)
+        Algorithm.cpp
+        utils.h)

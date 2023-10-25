@@ -9,6 +9,7 @@
 
 int  main(int argc, char **argv){
 
+//  processador_inventario.exe -total_art_dif Inventario_fisico.csv
 // usamos ctime para medir el timpo, se hace timando el tiempo inicial con t0
 // cuando temrinamos de ejecutar el codigo que deseamos medir, tomamos el tiempp nuevamente con t1
 // realizamos la resta y dividimos por CLOCKS_PER_SEC
@@ -19,6 +20,8 @@ int  main(int argc, char **argv){
 
     //creacion del objeto Data, carga los valores del file_name a ram
     Algorithm obj_1(file_name, argv[1]);
+
+    obj_1.print();
 
     t0=clock();
     // codigo a ejecutar TODO:

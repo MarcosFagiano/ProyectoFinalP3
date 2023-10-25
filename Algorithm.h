@@ -9,12 +9,15 @@
 #include <vector>
 #include <string>
 #include "Data.h"
+#include "utils.h"
+#include <iostream>
 
 class Algorithm: Data {
 
 public:
     Algorithm(const std::string &, char *&);
     void print();
+
 };
 
 
