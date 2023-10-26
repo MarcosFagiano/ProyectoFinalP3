@@ -9,7 +9,6 @@
 #include <vector>
 #include <string>
 #include "Data.h"
-#include "utils.h"
 #include <iostream>
 #include <typeinfo>
 
@@ -18,7 +17,8 @@ class Algorithm: protected Data {
 public:
     Algorithm(const std::string &, char *&);
     void print(int,int);
-
+    void total_art_dif();
+    void total_art();
 };
 
 

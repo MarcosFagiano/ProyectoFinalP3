@@ -5,9 +5,8 @@
 
 
 #include "Data.h"
-Data::Data(const std::string &file_name, char *& o_argv)
-        : m_file_name{file_name},
-        m_argv{o_argv== nullptr?"test":o_argv} {
+Data::Data(const std::string &file_name)
+        : m_file_name{file_name} {
 
     std::ifstream din;
     din.open(file_name);
@@ -58,7 +57,7 @@ Data::~Data(){
 }
 
 std::string Data::get_element(int m, int n) {
-    return m_data[m][n];
+    return m_data[m][n].empty() ? "empty" : m_data[m][n];
 }
 
 

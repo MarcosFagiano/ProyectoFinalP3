@@ -12,13 +12,11 @@
 #include <iostream>
 class Data{
 protected:
-    const unsigned int MAX_CHAR = 196;
     std::string m_file_name;
     unsigned int m_depostit_number;
-    std::string m_argv;
     std::vector<std::vector<std::string>> m_data;
 
-    Data(const std::string &, char* &);
+    Data(const std::string &);
     ~Data();
 
     void save_report();

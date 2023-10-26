@@ -9,6 +9,7 @@
 #include <string>
 #include <stdexcept>
 #include <limits>
+#include <sstream>
 
 template<typename T>
 T str_num(std::string str) {
@@ -22,6 +23,7 @@ T str_num(std::string str) {
 
     return result;
 }
+
 
 
 #endif //PARCIAL2_UTILS_H
