@@ -7,6 +7,7 @@
 #include "display.h"
 #include "utils.h"
 #include "Algorithm.h"
+#include "librerias/HashMap/HashEntry.h"
 
 int  main(int argc, char **argv){
 
@@ -21,13 +22,15 @@ int  main(int argc, char **argv){
     //creacion del objeto Data, carga los valores del file_name a ram
     Algorithm obj_1(file_name, argv[1]);
 
-
+    HashEntry<
+            >
     if(argc==1){
         argument_menu(argv);
     }else{
         t0=clock();
         // codigo a ejecutar TODO:acomodar menu de argumentos
         char *arg_opt = argv[1];
+
         if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
             obj_1.total_art_dif();
         }else if (std::strcmp(arg_opt, "-total_art") == 0) {

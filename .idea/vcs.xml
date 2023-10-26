@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/librerias/AlgoritmosOrdenamiento" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/librerias/Arbol" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/librerias/Cola" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/librerias/HashMap" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/librerias/Lista" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/librerias/Pila" vcs="Git" />
   </component>

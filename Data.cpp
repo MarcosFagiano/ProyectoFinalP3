@@ -47,7 +47,6 @@ Data::Data(const std::string &file_name)
 }
 
 
-
 void Data::save_report() {
 
 };

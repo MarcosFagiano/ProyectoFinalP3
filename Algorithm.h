@@ -19,6 +19,7 @@ public:
     void print(int,int);
     void total_art_dif();
     void total_art();
+
 };
 
 
