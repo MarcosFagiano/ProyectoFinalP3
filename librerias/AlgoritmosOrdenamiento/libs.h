@@ -1,5 +1,0 @@
-#include "./bubbleSort.cpp"
-#include "./insertSort.cpp"
-#include "./quickSort.cpp"
-#include "./shellSort.cpp"
-#include "./utils.cpp"

@@ -13,3 +13,12 @@
 [submodule "Arbol"]
 	path = Arbol
 	url = https://github.com/UCC-Programacion3/Arbol.git
+[submodule "librerias/Arbol"]
+	path = librerias/Arbol
+	url = https://github.com/UCC-Programacion3/Arbol.git
+[submodule "librerias/Lista"]
+	path = librerias/Lista
+	url = https://github.com/UCC-Programacion3/Lista.git
+[submodule "librerias/AlgoritmosOrdenamiento"]
+	path = librerias/AlgoritmosOrdenamiento
+	url = https://github.com/UCC-Programacion3/AlgoritmosOrdenamiento.git
