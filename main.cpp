@@ -23,6 +23,8 @@ int  main(int argc, char **argv){
     Algorithm obj_1(file_name, argv[1]);
 
 
+    //TODO:menu\
+
     if(argc==1){
         argument_menu(argv);
     }else{
