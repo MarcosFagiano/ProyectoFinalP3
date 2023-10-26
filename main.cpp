@@ -22,8 +22,7 @@ int  main(int argc, char **argv){
     //creacion del objeto Data, carga los valores del file_name a ram
     Algorithm obj_1(file_name, argv[1]);
 
-    HashEntry<
-            >
+
     if(argc==1){
         argument_menu(argv);
     }else{
