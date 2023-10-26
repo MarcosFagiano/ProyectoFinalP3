@@ -1,3 +1,15 @@
 [submodule "librerias/Cola"]
 	path = librerias/Cola
 	url = https://github.com/UCC-Programacion3/Cola.git
+[submodule "Pila"]
+	path = Pila
+	url = https://github.com/UCC-Programacion3/Pila.git
+[submodule "AlgoritmosOrdenamiento"]
+	path = AlgoritmosOrdenamiento
+	url = https://github.com/UCC-Programacion3/AlgoritmosOrdenamiento.git
+[submodule "Lista"]
+	path = Lista
+	url = https://github.com/UCC-Programacion3/Lista.git
+[submodule "Arbol"]
+	path = Arbol
+	url = https://github.com/UCC-Programacion3/Arbol.git
