@@ -10,11 +10,15 @@
 #include <vector>
 #include "fstream"
 #include <iostream>
+#include "librerias/Lista/Lista.h"
+#include "librerias/HashMap/HashMap.h"
+
 class Data{
 protected:
     std::string m_file_name;
     unsigned int m_depostit_number;
-    std::vector<std::vector<std::string>> m_data;
+    HashMap<std::string, Lista<std::string>> m_data;
+    Lista<std::string> m_hash_key;
 
     Data(const std::string &);
     ~Data();

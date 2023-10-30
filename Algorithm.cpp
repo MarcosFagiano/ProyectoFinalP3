@@ -14,12 +14,12 @@ void Algorithm::print(int m, int n) {
 }
 
 void Algorithm::total_art() {
-    std::cout << "Cantidad de articulos: " << m_data.size() << std::endl;
+    //std::cout << "Cantidad de articulos: " << m_data.size() << std::endl;
 }
 
-void Algorithm::total_art_dif() {
+/*void Algorithm::total_art_dif() {
     unsigned int art_cont=0;
     for(int index=0; index<m_data.size(); index++){
         art_cont++;
     }
-}
+}*/

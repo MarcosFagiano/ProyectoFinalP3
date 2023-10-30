@@ -17,37 +17,41 @@ int  main(int argc, char **argv){
 // realizamos la resta y dividimos por CLOCKS_PER_SEC
 
     unsigned t0, t1;
-    std::string file_name = argv[argc-1];
+    try {
+        std::string file_name = argv[argc - 1];
 
-    //creacion del objeto Data, carga los valores del file_name a ram
-    Algorithm obj_1(file_name, argv[1]);
+        //creacion del objeto Data, carga los valores del file_name a ram
+        Algorithm obj_1(file_name, argv[1]);
 
 
-    //TODO:menu\
+        //TODO:menu\
 
-    if(argc==1){
-        argument_menu(argv);
-    }else{
-        t0=clock();
-        // codigo a ejecutar TODO:acomodar menu de argumentos
-        char *arg_opt = argv[1];
+        if (argc == 1) {
+            argument_menu(argv);
+        } else {
+            t0 = clock();
+            // codigo a ejecutar TODO:acomodar menu de argumentos
+            char *arg_opt = argv[1];
 
-        if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
-            obj_1.total_art_dif();
-        }else if (std::strcmp(arg_opt, "-total_art") == 0) {
-            obj_1.total_art();
-        }else if (std::strcmp(arg_opt, "-min_stock") == 0) {
-            std::cout << "-min_stock" << std::endl;
-        } else if (std::strcmp(arg_opt, "-min_stock") == 0 && argc == 5) {
-            std::cout << "-min_stock_2" << std::endl;
-        } else if (std::strcmp(arg_opt, "-stock") == 0) {
-            std::cout << "-stock" << std::endl;
-        } else if (std::strcmp(arg_opt, "-stock") == 0 && argc == 5) {
-            std::cout << "-stock_2" << std::endl;
-        } else if (std::strcmp(arg_opt, "-max_stock") == 0) {
-            std::cout << "-max_stock" << std::endl;
+            if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
+                obj_1.total_art_dif();
+            } else if (std::strcmp(arg_opt, "-total_art") == 0) {
+                obj_1.total_art();
+            } else if (std::strcmp(arg_opt, "-min_stock") == 0) {
+                std::cout << "-min_stock" << std::endl;
+            } else if (std::strcmp(arg_opt, "-min_stock") == 0 && argc == 5) {
+                std::cout << "-min_stock_2" << std::endl;
+            } else if (std::strcmp(arg_opt, "-stock") == 0) {
+                std::cout << "-stock" << std::endl;
+            } else if (std::strcmp(arg_opt, "-stock") == 0 && argc == 5) {
+                std::cout << "-stock_2" << std::endl;
+            } else if (std::strcmp(arg_opt, "-max_stock") == 0) {
+                std::cout << "-max_stock" << std::endl;
+            }
+            t1 = clock();
         }
-        t1 = clock();
+    }catch (const char *err){
+        std::cout << "error: " << err << std::endl;
     }
     double time = (double (t1-t0)/CLOCKS_PER_SEC);
 
