@@ -56,7 +56,7 @@ Data::~Data(){
 }
 
 std::string Data::get_element(int m, int n) {
-    return m_data[m][n].empty() ? "empty" : m_data[m][n];
+    return "0";
 }
 
 

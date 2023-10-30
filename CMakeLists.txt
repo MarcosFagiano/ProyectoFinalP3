@@ -7,4 +7,5 @@ add_executable(Procesador_inventario
         Data.cpp
         display.cpp
         Algorithm.cpp
-        utils.h)
+        utils.h
+        librerias/HashMap/HashMap.h)
