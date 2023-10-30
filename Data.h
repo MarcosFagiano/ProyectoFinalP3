@@ -12,12 +12,14 @@
 #include <iostream>
 #include "librerias/Lista/Lista.h"
 #include "librerias/HashMap/HashMap.h"
+#include "hash_map"
 
 class Data{
 protected:
     std::string m_file_name;
     unsigned int m_depostit_number;
-    HashMap<std::string, Lista<std::string>> m_data;
+    std::hash<>
+    //<std::string, Lista<std::string>> m_data;
     Lista<std::string> m_hash_key;
 
     Data(const std::string &);
@@ -25,6 +27,7 @@ protected:
 
     void save_report();
     std::string get_element(int, int);
+
 
 };
 

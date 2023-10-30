@@ -17,8 +17,12 @@ int  main(int argc, char **argv){
 // realizamos la resta y dividimos por CLOCKS_PER_SEC
 
     unsigned t0, t1;
+<<<<<<< HEAD
     try {
         std::string file_name = argv[argc - 1];
+=======
+    std::string file_name = argv[argc - 1];
+>>>>>>> main
 
         //creacion del objeto Data, carga los valores del file_name a ram
         Algorithm obj_1(file_name, argv[1]);
@@ -56,4 +60,5 @@ int  main(int argc, char **argv){
     double time = (double (t1-t0)/CLOCKS_PER_SEC);
 
     std::cout << "\nTiempo de ejecucion: " << time << std::endl;
+
 }
