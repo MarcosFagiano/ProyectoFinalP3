@@ -21,7 +21,7 @@ int  main(int argc, char **argv){
         std::string file_name = argv[argc - 1];
 
         //creacion del objeto Data, carga los valores del file_name a ram
-        Algorithm obj_1(file_name, argv[1]);
+        Algorithm obj_1(file_name);
 
 
         //TODO:menu\
