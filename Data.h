@@ -13,14 +13,13 @@
 #include "librerias/Lista/Lista.h"
 #include "librerias/HashMap/HashMap.h"
 #include "unordered_map"
-#include "list"
-
 class Data{
 protected:
     std::string m_file_name;
     unsigned int m_depostit_number;
-    std::unordered_map<std::string, std::list<std::string>> m_data;
-    std::list<std::string> m_hash_key;
+    std::unordered_map<unsigned int, std::string> m_data;
+    Lista<unsigned intx> m_hash_key;
+
 
     Data(const std::string &);
     ~Data();
@@ -29,7 +28,7 @@ protected:
     std::string get_element(int, int);
 
 
-    std::list<std::string> get_row(int m);
+    std::string get_row(int m);
 };
 
 

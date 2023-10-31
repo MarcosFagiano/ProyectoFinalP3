@@ -12,18 +12,21 @@
 #include <sstream>
 #include <list>
 
-template<typename T>
-T str_num(std::string str) {
-    T result;
+template<class T>
+T str_num(std::string const &str) {
+        T aux;
+        for(auto &x:str){
+            x=='-'||x==' '?:aux+=(T)x;
+        }
+        T result = aux;
 
-    result = std::stoi(str);
+        if (result > std::numeric_limits<T>::max()) {
+            throw std::out_of_range("Fuera de rango.");
+        }
+        return result;
 
-    if (result > std::numeric_limits<T>::max()) {
-        throw std::out_of_range("Fuera de rango.");
-    }
-
-    return result;
 }
+
 
 template<class T>
 T get_list_element(std::list<T> const &o_list, int index){

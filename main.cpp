@@ -34,7 +34,6 @@ int  main(int argc, char **argv){
             char *arg_opt = argv[1];
 
             if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
-                obj_1.print(1);
                 obj_1.total_art_dif();
             } else if (std::strcmp(arg_opt, "-total_art") == 0) {
                 obj_1.total_art();

@@ -8,4 +8,5 @@ add_executable(Procesador_inventario
         display.cpp
         Algorithm.cpp
         utils.h
-        librerias/HashMap/HashMap.h)
+        librerias/HashMap/HashMap.h
+        librerias/Arbol/ArbolBinarioAVL.h)

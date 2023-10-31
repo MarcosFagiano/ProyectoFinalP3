@@ -19,12 +19,7 @@ void Algorithm::print(int m, int n) {
     list.clear();
 }
 void Algorithm::print(int m) {
-    auto hash_key =  get_list_element(m_hash_key,m);
-    auto list = m_data.find(hash_key);
-    for(auto &x:list->second){
-        std::cout << x << ',';
-    }
-    std::cout << std::endl;
+//
 }
 
 void Algorithm::total_art() {
