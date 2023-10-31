@@ -5,7 +5,7 @@
 #include "Algorithm.h"
 #include "utils.h"
 
-Algorithm::Algorithm(const std::string &file_name, char *&o_argv)
+Algorithm::Algorithm(const std::string &file_name)
         : Data(file_name) {
 
 }

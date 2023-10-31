@@ -16,7 +16,7 @@
 class Algorithm: protected Data {
 
 public:
-    Algorithm(const std::string &, char *&);
+    Algorithm(const std::string &);
     void print(int,int);
     void total_art_dif();
     void total_art();
