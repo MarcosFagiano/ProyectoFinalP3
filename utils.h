@@ -30,15 +30,4 @@ T str_num(std::string const &str) {
     }
 }
 
-
-
-
-template<class T>
-T get_list_element(std::list<T> const &o_list, int index){
-    auto it = o_list.begin();
-    std::advance(it, index);
-    return *it;
-}
-
-
 #endif //PARCIAL2_UTILS_H
