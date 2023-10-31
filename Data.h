@@ -18,7 +18,7 @@ protected:
     std::string m_file_name;
     unsigned int m_depostit_number;
     std::unordered_map<unsigned int, std::string> m_data;
-    Lista<unsigned intx> m_hash_key;
+    Lista<unsigned int> m_hash_key;
 
 
     Data(const std::string &);

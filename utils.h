@@ -14,18 +14,23 @@
 
 template<class T>
 T str_num(std::string const &str) {
-        T aux;
-        for(auto &x:str){
-            x=='-'||x==' '?:aux+=(T)x;
+    T aux=0;
+    if(str.empty()){
+        return 0;
+    }else {
+        for (auto &x: str) {
+            x == '-' || x == ' ' ?: aux += (T) x;
         }
         T result = aux;
 
         if (result > std::numeric_limits<T>::max()) {
             throw std::out_of_range("Fuera de rango.");
         }
-        return result;
-
+        return result-'0';
+    }
 }
+
+
 
 
 template<class T>

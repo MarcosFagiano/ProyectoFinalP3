@@ -36,6 +36,7 @@ int  main(int argc, char **argv){
             if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
                 obj_1.total_art_dif();
             } else if (std::strcmp(arg_opt, "-total_art") == 0) {
+                obj_1.print(2);
                 obj_1.total_art();
             } else if (std::strcmp(arg_opt, "-min_stock") == 0) {
                 std::cout << "-min_stock" << std::endl;

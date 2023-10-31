@@ -74,11 +74,3 @@ std::string Data::get_element(int m, int n) {
 std::string Data::get_row(int m) {
     return m_data.find(m_hash_key.getDato(m))->second;
 }
-
-
-//test
-
-
-
-
-

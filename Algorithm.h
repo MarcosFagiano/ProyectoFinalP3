@@ -11,6 +11,7 @@
 #include "Data.h"
 #include <iostream>
 #include <typeinfo>
+#include "librerias/Cola/Cola.h"
 
 class Algorithm: protected Data {
 
