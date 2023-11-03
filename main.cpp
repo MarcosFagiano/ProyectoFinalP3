@@ -5,9 +5,9 @@
 #include "ctime"
 #include "iostream"
 #include "display.h"
-#include "utils.h"
+//#include "utils.h"
 #include "Algorithm.h"
-#include "librerias/HashMap/HashEntry.h"
+//#include "librerias/HashMap/HashEntry.h"
 
 int  main(int argc, char **argv){
 
@@ -34,6 +34,7 @@ int  main(int argc, char **argv){
             char *arg_opt = argv[1];
 
             if (std::strcmp(arg_opt, "-total_art_dif") == 0) {
+                obj_1.test();
                 obj_1.total_art_dif();
             } else if (std::strcmp(arg_opt, "-total_art") == 0) {
                 obj_1.total_art();
@@ -51,6 +52,8 @@ int  main(int argc, char **argv){
             t1 = clock();
         }
     }catch (const char *err){
+        std::cout << "error: " << err << std::endl;
+    }catch (const int err){
         std::cout << "error: " << err << std::endl;
     }
     double time = (double (t1-t0)/CLOCKS_PER_SEC);

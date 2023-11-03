@@ -107,7 +107,7 @@ template <class T> void Lista<T>::insertar(int pos, T dato) {
   }
 
   if (aux == nullptr) {
-    throw 404;
+    throw "insert";
   }
 
   nuevo->setSiguiente(aux->getSiguiente());
@@ -166,7 +166,7 @@ template <class T> void Lista<T>::remover(int pos) {
   }
 
   if (aux == nullptr) {
-    throw 404;
+    throw "remove";
   }
 
   aBorrar = aux->getSiguiente();
@@ -191,7 +191,7 @@ template <class T> T Lista<T>::getDato(int pos) {
   }
 
   if (aux == nullptr) {
-    throw 404;
+    throw "getDato";
   }
 
   return aux->getDato();
@@ -213,7 +213,7 @@ template <class T> void Lista<T>::reemplazar(int pos, T dato) {
   }
 
   if (aux == nullptr) {
-    throw 404;
+    throw "reemplazar";
   }
 
   aux->setDato( dato );

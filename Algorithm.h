@@ -22,6 +22,8 @@ public:
     void total_art();
 
     void print(int m);
+
+    void test();
 };
 
 

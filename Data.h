@@ -10,15 +10,17 @@
 #include <vector>
 #include "fstream"
 #include <iostream>
-#include "librerias/Lista/Lista.h"
-#include "librerias/HashMap/HashMap.h"
+//#include "librerias/Lista/Lista.h"
+//#include "librerias/HashMap/HashMap.h"
 #include "unordered_map"
+#include "list"
 class Data{
 protected:
     std::string m_file_name;
     unsigned int m_depostit_number;
     std::unordered_map<unsigned int, std::string> m_data;
-    Lista<unsigned int> m_hash_key;
+    //Lista<unsigned int> m_hash_key;
+    std::list<unsigned int> m_hash_key;
 
 
     Data(const std::string &);
@@ -29,6 +31,9 @@ protected:
 
 
     std::string get_row(int m);
+
+    template<class T>
+    T get_value(std::list<T> &list, int position);
 };
 
 

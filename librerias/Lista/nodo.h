@@ -20,8 +20,8 @@ class Nodo{
            return siguiente;
        }
 
-       void setSiguiente(Nodo<T> *siguiente){
-           this->siguiente = siguiente;
+       void setSiguiente(Nodo<T> *o_siguiente){
+           this->siguiente = o_siguiente;
        }
 
 
