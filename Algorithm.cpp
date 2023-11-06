@@ -39,11 +39,10 @@ void Algorithm::test(){
     Data::get_element(6,7);
 }
 
-
-
 void Algorithm::stock(const std::string &nombreArticulo) {
     try {
-        unsigned int stockTotal = str_num<unsigned int>(arbinventario.search(nombreArticulo));
+        // Buscar el artículo en el árbol binario y obtener el stock total.
+        auto stockTotal = str_num<unsigned int>(arbinventario.search(nombreArticulo));
         std::cout << "Stock total para el artículo " << nombreArticulo << ": " << stockTotal << std::endl;
     } catch (int error) {
         std::cout << "Artículo no encontrado en el inventario." << std::endl;
@@ -57,11 +56,11 @@ void Algorithm::stockEnDeposito(const std::string &nombreArticulo, int numeroDep
         return;
     }
     try {
-        unsigned int stockDeposito = str_num<unsigned int>(arbinventario.search(nombreArticulo));
+        // Buscar el artículo en el árbol binario y obtener el stock en el depósito especificado.
+        auto stockDeposito = str_num<unsigned int>(arbinventario.search(nombreArticulo));
         std::cout << "Stock en el depósito " << numeroDeposito << " para el artículo " << nombreArticulo << ": " << stockDeposito << std::endl;
     } catch (int error) {
+        // Manejar el caso en que el artículo no se encuentra en el inventario.
         std::cout << "Artículo no encontrado en el inventario." << std::endl;
     }
 }
-
-
