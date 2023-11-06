@@ -2,6 +2,7 @@
 #define U05_ARBOL_ARBOL_ARBOLBINARIO_H_
 
 #include "NodoArbol.h"
+#include <iostream>
 
 template <class T>
 class ArbolBinario

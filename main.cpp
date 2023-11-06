@@ -43,8 +43,10 @@ int  main(int argc, char **argv){
             } else if (std::strcmp(arg_opt, "-min_stock") == 0 && argc == 5) {
                 std::cout << "-min_stock_2" << std::endl;
             } else if (std::strcmp(arg_opt, "-stock") == 0) {
+                obj_1.stock("BANQUETA TAPIZADA COST BCO  BASE PINTADA NEGRO");
                 std::cout << "-stock" << std::endl;
             } else if (std::strcmp(arg_opt, "-stock") == 0 && argc == 5) {
+                obj_1.stockEnDeposito("BANQUETA TAPIZADA COST BCO  BASE PINTADA NEGRO", 3);
                 std::cout << "-stock_2" << std::endl;
             } else if (std::strcmp(arg_opt, "-max_stock") == 0) {
                 std::cout << "-max_stock" << std::endl;
