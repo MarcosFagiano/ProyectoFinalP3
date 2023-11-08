@@ -23,7 +23,7 @@ public:
     void stock(char *, unsigned int);
     void min_stock(unsigned int );
     void min_stock(unsigned int, unsigned int);
-    void stock_max(unsigned int);
+    void max_stock(unsigned int);
 };
 
 

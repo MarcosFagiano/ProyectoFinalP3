@@ -24,6 +24,8 @@ protected:
     ~Data();
     std::string get_value(unsigned int,unsigned int);
     static std::string get_key(std::list<std::string> &, unsigned int n);
+    unsigned int get_stock(char *);
+    unsigned int get_stock(char *, unsigned int);
 };
 
 

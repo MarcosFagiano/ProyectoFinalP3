@@ -18,7 +18,6 @@ Data::Data(const std::string &file_name)
 
     getline(din, input_header);
     std::stringstream ih(input_header);
-
     //guardamos la primer linea (cabecera) y separamos por coma almacenando los valores en una lista.
     while (getline(ih, aux_buffer, ',')){
         header.push_back(aux_buffer);
@@ -52,11 +51,6 @@ Data::Data(const std::string &file_name)
     din.close();
 }
 
-/*std::string Data::get_element(unsigned int n, unsigned int m) {
-
-    return std::string();
-}*/
-
 std::string Data::get_key(std::list<std::string> &o_list, unsigned int n) {
     auto it = o_list.begin();
     std::advance(it, n);
@@ -64,7 +58,6 @@ std::string Data::get_key(std::list<std::string> &o_list, unsigned int n) {
 }
 
 std::string Data::get_value(unsigned int n, unsigned int m) {
-
     if(m==m_column_number-1){
         auto it_n = m_hash_key.begin();
         std::advance(it_n, n);
