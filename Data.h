@@ -23,7 +23,6 @@ protected:
     ~Data();
     std::string get_element(unsigned int, unsigned int);
     std::string get_column(std::list<std::string> &o_list, unsigned int n);
-
     std::string get_value(std::string &o_str, unsigned int n);
 };
 

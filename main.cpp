@@ -36,6 +36,7 @@ int  main(int argc, char **argv){
                 }
                 case 2: {
                     obj_1.total_art();
+                    //obj_1.test();
                     break;
                 }
                 case 3: {

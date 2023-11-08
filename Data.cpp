@@ -29,10 +29,16 @@ Data::Data(const std::string &file_name)
     while (getline(din, input_row)) {
         std::stringstream ir(input_row);
         while (getline(ir, aux_buffer, ',')) {
-            aux_map.push_back(aux_buffer);
+            if (!aux_buffer.empty()) {
+                aux_map.push_back(aux_buffer);
+            } else {
+                aux_map.emplace_back("0");
+            }
+          //  std::cout << aux_map.back() << std::endl;
         }
-        //guardamos input_row en m_data con m_hash_key[2] como llave.
-        //m_hash_key[2] contiene el nombre del producto
+        aux_map.emplace_back("\n");
+        //guardamos la fila de entrada en n hashmap con m_hash_key[1] como llave.
+        //m_hash_key[1] contiene el codigo de barras del producto
         m_hash_key.push_back(get_column(aux_map, 2));
         m_data.emplace(m_hash_key.back(), aux_map);
         m_file_number++;
@@ -58,8 +64,9 @@ std::string Data::get_value(std::string &o_str, unsigned int n) {
         return it;
     }
 }
+
 std::string Data::get_element(unsigned int n, unsigned int m) {
-    if(m==m_column_number-1){
+    if(m==m_column_number){
         auto it_n = m_hash_key.begin();
         std::advance(it_n, n);
         auto it_m = m_data.find(*it_n)->second.back();

@@ -14,9 +14,9 @@ void Inventariado::total_art_dif() {
 void Inventariado::total_art() {
     unsigned int total=0;
     for(int i=0; i<m_file_number; i++){
-        for(int j=3; j<m_column_number; j++){
+        for(int j=3; j<=m_column_number; j++){
             if(isdigit(get_element(i, j)[0]) && !get_element(i, j).empty()){
-                std::cout << "valor(" << i << "," << j << ")= " << std::stoul(get_element(i, j)) << std::endl;
+                std::cout << "valor(" << i+1 << "," << j+1 << ")= " << std::stoul(get_element(i, j)) << std::endl;
                 total+=std::stoul(get_element(i, j));
             }
         }
