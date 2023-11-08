@@ -30,12 +30,4 @@ T str_num(std::string const &str) {
     }
 }
 
-template<class T>
-T str_num(const char * str) {
-    T value;
-    std::istringstream stream(str);
-    stream >> value;
-    return value;
-}
-
 #endif //PARCIAL2_UTILS_H

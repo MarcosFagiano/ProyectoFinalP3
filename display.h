@@ -5,13 +5,17 @@
 #ifndef PARCIAL2_V2_DISPLAY_H
 #define PARCIAL2_V2_DISPLAY_H
 
+#include <sstream>
 #include "iostream"
 
 
 
 void argument_menu(char **argv){
+    std::stringstream ss(argv[0]);
+    std::string out_string;
+    while (getline(ss, out_string, '/'));
     std::cout << "Uso normal:\n"
-              << argv[0] << "[Argumentos] inventariofisico.csv\n"
+              << out_string << " [Argumentos] inventariofisico.csv\n"
                             "Argumentos posibles:\n"
                             "\t-total_art_dif --> Cantidad total de artículos diferentes.\n"
                             "\t-total_art --> Cantidad total de artículos.\n"

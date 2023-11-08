@@ -29,21 +29,19 @@ Data::Data(const std::string &file_name)
     while (getline(din, input_row)) {
         std::stringstream ir(input_row);
         while (getline(ir, aux_buffer, ',')) {
-            if (!aux_buffer.empty()) {
+           // std::cout << aux_buffer << std::endl;
+            /*if (!aux_buffer.empty()) {*/
                 aux_map.push_back(aux_buffer);
-            } else {
+           /* } else {
                 aux_map.emplace_back("null");
-            }
+            }*/
         }
-        if (input_row.back() == ',') {
-            aux_map.emplace_back("null");
-        }
-        ir.clear();
         //guardamos la fila de entrada en n hashmap con m_hash_key[1] como llave.
         //m_hash_key[1] contiene el codigo de barras del producto
         m_hash_key.push_back(get_key(aux_map, 2));
         m_data.emplace(m_hash_key.back(), aux_map);
         m_file_number++;
+        ir.clear();
         aux_map.clear();
         input_row.clear();
         aux_buffer.clear();

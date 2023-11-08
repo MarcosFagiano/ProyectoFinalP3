@@ -12,18 +12,21 @@
 #include <typeinfo>
 #include "utils.h"
 #include "librerias/Lista/Lista.h"
+#include "librerias/Arbol/ArbolBinarioAVL.h"
 
 class Inventariado: protected Data {
-
 public:
     explicit Inventariado(const std::string &);
     void total_art_dif();
     void total_art();
-    void stock(char *);
-    void stock(char *, unsigned int);
     void min_stock(unsigned int );
     void min_stock(unsigned int, unsigned int);
     void max_stock(unsigned int);
+
+    void stock(const char *nombreArticulo, unsigned int numeroDeposito);
+    void stock(const char *nombreArticulo);
+
+    void test();
 };
 
 

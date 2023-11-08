@@ -9,7 +9,7 @@
 
 int  main(int argc, char **argv){
 
-//  processador_inventario.exe -total_art_dif Inventario_fisico.csv
+// processador_inventario.exe [argumentos] Inventariado_Fisico.csv
 // usamos ctime para medir el timpo, se hace timando el tiempo inicial con t0
 // cuando temrinamos de ejecutar el codigo que deseamos medir, tomamos el tiempp nuevamente con t1
 // realizamos la resta y dividimos por CLOCKS_PER_SEC
@@ -29,7 +29,7 @@ int  main(int argc, char **argv){
                     {"-stock",         4},
                     {"-max_stock",     5}
             };
-            t1 = clock();
+            t0 = clock();
             switch (arg_opt.find(argv[1])->second) {
                 case 1: {
                     obj_1.total_art_dif();
@@ -37,6 +37,7 @@ int  main(int argc, char **argv){
                 }
                 case 2: {
                     obj_1.total_art();
+                    //obj_1.test();
                     break;
                 }
                 case 3: {
@@ -44,6 +45,8 @@ int  main(int argc, char **argv){
                         obj_1.min_stock(str_num<unsigned int>(argv[2]));
                     } else if (argc == 5) {
                         obj_1.min_stock(str_num<unsigned int>(argv[2]), str_num<unsigned int>(argv[3]));
+                    }else{
+                        argument_menu(argv);
                     }
                     break;
                 }
@@ -52,7 +55,8 @@ int  main(int argc, char **argv){
                         obj_1.stock(argv[2]);
                     } else if (argc == 5) {
                         obj_1.stock(argv[2], str_num<unsigned int>(argv[3]));
-
+                    }else{
+                        argument_menu(argv);
                     }
                     break;
                 }
