@@ -16,17 +16,14 @@
 class Inventariado: protected Data {
 
 public:
-    Inventariado(const std::string &);
-    void print(int,int);
+    explicit Inventariado(const std::string &);
     void total_art_dif();
     void total_art();
     void stock(char *);
+    void stock(char *, unsigned int);
     void min_stock(unsigned int );
     void min_stock(unsigned int, unsigned int);
-
-    void print(int m);
-
-    void test();
+    void stock_max(unsigned int);
 };
 
 

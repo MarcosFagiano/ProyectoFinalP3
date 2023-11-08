@@ -19,14 +19,11 @@ protected:
     std::unordered_map<std::string, std::list<std::string>> m_data;
     std::list<std::string> m_hash_key;
 
-    Data(const std::string  &);
-    ~Data();
 
-    std::string get_element(unsigned int,unsigned int);
+    explicit Data(const std::string  &);
+    ~Data();
     std::string get_value(unsigned int,unsigned int);
     static std::string get_key(std::list<std::string> &, unsigned int n);
-
-
 };
 
 

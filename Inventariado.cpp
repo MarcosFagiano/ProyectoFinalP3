@@ -6,14 +6,6 @@ Inventariado::Inventariado(const std::string &file_name)
         : Data(file_name) {
 }
 
-void Inventariado::print(int m) {
-    std::cout << get_value(1,1) << std::endl;
-}
-
-void Inventariado::test(){
-    //std::cout << m_data.find(get_key(m_hash_key, 2))->second.back() << std::endl;
-    std::cout << get_value(3,0) << std::endl;
-}
 
 void Inventariado::total_art_dif() {
     std::cout << "Total de articulos diferentes: " << m_file_number << std::endl;
@@ -36,17 +28,24 @@ void Inventariado::total_art() {
     std::cout << "Total de articulos: " << total << std::endl;
 }
 
-void Inventariado::stock(char * articulo) {
+void Inventariado::stock(char * nombre_articulo) {
+
+}
+
+void Inventariado::stock(char * nombre_articulo, unsigned int deposito) {
 
 }
 
 void Inventariado::min_stock(unsigned int n) {
-    ArbolBinarioAVL<std::list<std::string>> arbol;
-
-    arbol.put(m_data.find(m_hash_key.back())->second);
-
+    for (int i = 0; i < m_file_number; ++i) {
+        get_value(i, m_column_number-2);
+    }
 }
 
 void Inventariado::min_stock(unsigned int n, unsigned int deposito) {
+
+}
+
+void Inventariado::stock_max(unsigned int n) {
 
 }

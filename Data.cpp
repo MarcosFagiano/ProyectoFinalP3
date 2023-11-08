@@ -42,7 +42,7 @@ Data::Data(const std::string &file_name)
         ir.clear();
         //guardamos la fila de entrada en n hashmap con m_hash_key[1] como llave.
         //m_hash_key[1] contiene el codigo de barras del producto
-        m_hash_key.push_back(get_key(aux_map, 1));
+        m_hash_key.push_back(get_key(aux_map, 2));
         m_data.emplace(m_hash_key.back(), aux_map);
         m_file_number++;
         aux_map.clear();

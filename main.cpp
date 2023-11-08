@@ -69,7 +69,9 @@ int  main(int argc, char **argv){
         unsigned t0, t1;
         //creacion del objeto Data, carga los valores del file_name a ram
         Inventariado obj_1(file_name);
+    if(argc==1){
 
+    }
         std::unordered_map<std::string, int> arg_opt = {
                 {"-total_art_dif", 1},
                 {"-total_art",     2},
@@ -97,14 +99,15 @@ int  main(int argc, char **argv){
             }
             case 4:{
                 if (argc == 4) {
-                    obj_1.stock(argv[2]);
+                    obj_1.stock(str_num<unsigned int>(argv[2]));
                 } else if (argc == 5) {
-                    std::cout << "5 argumentos" << std::endl;
+                    obj_1.stock(str_num<unsigned int>(argv[2]),str_num<unsigned int>(argv[3]);
+
                 }
                 break;
             }
             case 5: {
-                std::cout << "-max_stock" << std::endl;
+                obj_1.
                 break;
             }
             default: {
