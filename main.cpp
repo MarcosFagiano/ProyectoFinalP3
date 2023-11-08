@@ -1,7 +1,6 @@
 //
 // Created by maverick on 10/9/23.
 //
-//#include <cstring>
 #include "ctime"
 #include "iostream"
 #include "display.h"
@@ -37,7 +36,6 @@ int  main(int argc, char **argv){
                 }
                 case 2: {
                     obj_1.total_art();
-                    //obj_1.test();
                     break;
                 }
                 case 3: {

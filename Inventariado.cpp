@@ -15,9 +15,9 @@ void Inventariado::total_art() {
     unsigned int total=0;
     for(int i=0; i<m_file_number; i++){
         for(int j=3; j<m_column_number; j++){
-            if(isdigit(get_value(i,j)[0])&& !get_value(i,j).empty()){
-                std::cout << "valor(" << i << "," << j << ")= " <<  std::stoul(get_value(i,j)) << std::endl;
-                total+=std::stoul(get_value(i,j));
+            if(isdigit(get_element(i, j)[0]) && !get_element(i, j).empty()){
+                std::cout << "valor(" << i << "," << j << ")= " << std::stoul(get_element(i, j)) << std::endl;
+                total+=std::stoul(get_element(i, j));
             }
         }
     }
@@ -38,15 +38,29 @@ void Inventariado::max_stock(unsigned int n) {
 }
 
 void Inventariado::stock(const char *nombreArticulo) {
-
+    std::string buffer(nombreArticulo);
+    unsigned int suma=0;
+    for(int i=3; i<m_column_number; i++){
+        auto buffer_str = get_value(buffer, i);
+        suma+= isdigit(buffer_str[0])?std::stoul(buffer_str):0;
+        buffer_str.clear();
+    }
+    std::cout << "El stock de " << nombreArticulo << " es: " << suma << std::endl;
 }
 
 void Inventariado::stock(const char *nombreArticulo, unsigned int numeroDeposito) {
-
+    numeroDeposito+=3;
+    if(numeroDeposito<3||numeroDeposito>m_column_number){
+        throw std::runtime_error("Deposito fuera de rango.");
+    }
+    std::string buffer(nombreArticulo);
+    auto buffer_str = get_value(buffer, numeroDeposito);
+    std::cout <<"El stock de " << nombreArticulo << " es: "<<
+              (isdigit(buffer_str[0])?std::stoul(buffer_str):0) << std::endl;
 }
 
 void Inventariado::test(){
     for(int i=0; i<m_file_number; i++){
-        std::cout << get_value(i, 7) << std::endl;
+        std::cout << get_element(i, 7) << std::endl;
     }
 }

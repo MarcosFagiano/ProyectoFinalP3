@@ -21,9 +21,10 @@ protected:
 
     explicit Data(const std::string  &);
     ~Data();
-    std::string get_value(unsigned int,unsigned int);
-    std::string get_key(std::list<std::string> &, unsigned int n);
+    std::string get_element(unsigned int, unsigned int);
+    std::string get_column(std::list<std::string> &o_list, unsigned int n);
 
+    std::string get_value(std::string &o_str, unsigned int n);
 };
 
 
