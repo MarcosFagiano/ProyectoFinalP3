@@ -1,40 +1,33 @@
 //
-// Created by maverick on 10/9/23.
+// Created by maverick on 11/6/23.
 //
 
-#ifndef PARCIAL2_DATA_H
-#define PARCIAL2_DATA_H
+#ifndef PARCIAL2_V2_DATA_H
+#define PARCIAL2_V2_DATA_H
 
-#include <string>
-#include <sstream>
-#include <vector>
+#include <unordered_map>
+#include <list>
+#include "string"
+#include "sstream"
 #include "fstream"
-#include <iostream>
-//#include "librerias/Lista/Lista.h"
-//#include "librerias/HashMap/HashMap.h"
-#include "unordered_map"
-#include "list"
-class Data{
+#include "iostream"
+class Data {
 protected:
     std::string m_file_name;
-    unsigned int m_depostit_number;
-    std::unordered_map<unsigned int, std::string> m_data;
-    //Lista<unsigned int> m_hash_key;
-    std::list<unsigned int> m_hash_key;
+    unsigned int m_column_number=0;
+    unsigned int m_file_number=0;
+    std::unordered_map<std::string, std::list<std::string>> m_data;
+    std::list<std::string> m_hash_key;
 
-
-    Data(const std::string &);
+    Data(const std::string  &);
     ~Data();
 
-    void save_report();
-    std::string get_element(int, int);
+    std::string get_element(unsigned int,unsigned int);
+    std::string get_value(unsigned int,unsigned int);
+    static std::string get_key(std::list<std::string> &, unsigned int n);
 
 
-    std::string get_row(int m);
-
-    template<class T>
-    T get_value(std::list<T> &list, int position);
 };
 
 
-#endif //PARCIAL2_DATA_H
+#endif //PARCIAL2_V2_DATA_H

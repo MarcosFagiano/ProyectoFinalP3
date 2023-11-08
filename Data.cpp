@@ -1,87 +1,85 @@
 //
-// Created by maverick on 10/9/23.
+// Created by maverick on 11/6/23.
 //
 
-
-
+#include <vector>
 #include "Data.h"
-#include "utils.h"
-
-template<class T>
-T Data::get_value(std::list<T> &list, int position) {
-    auto it = list.begin();
-    std::advance(it, position);
-
-    if (it != list.end()) {
-        return *it;
-    }
-}
 
 Data::Data(const std::string &file_name)
-        : m_file_name{file_name} {
-
+        :m_file_name(file_name) {
     std::ifstream din;
     din.open(file_name);
     if (!din.is_open()) {
-        throw std::runtime_error("No se ha podido abrir el archivo.");
+        throw std::runtime_error("No se pudo abrir el archivo.");
     }
 
-    std::string raw_buffer;
-    std::string raw_header;
-    //Lista<std::string> header;
-    std::list<std::string> header;
+    std::string input_buffer, input_header, aux_buffer, input_row;
+    std::list<std::string> header, aux_map;
 
+    getline(din, input_header);
+    std::stringstream ih(input_header);
 
-    getline(din, raw_header);
-    std::stringstream ss(raw_header);
-    std::string header_buffer;
-    while (getline(ss, header_buffer, ',')){
-        header.push_back(header_buffer);
+    //guardamos la primer linea (cabecera) y separamos por coma almacenando los valores en una lista.
+    while (getline(ih, aux_buffer, ',')){
+        header.push_back(aux_buffer);
+        m_column_number++;
     }
 
-    header_buffer.clear();
-    raw_header.clear();
-    m_depostit_number=header.size()-3;
-
-    //Lista<std::string> element_buffer;
-    while (std::getline(din, raw_buffer)) {
-        std::stringstream stringStream(raw_buffer);
-//        Lista<std::string> element_buffer;
-        std::vector<std::string> element_buffer;
-        std::string element;
-
-        while(std::getline(stringStream, element, ',')){
-            element_buffer.push_back(element);
+    input_buffer.clear();
+    aux_buffer.clear();
+    while (getline(din, input_row)) {
+        std::stringstream ir(input_row);
+        while (getline(ir, aux_buffer, ',')) {
+            if (!aux_buffer.empty()) {
+                aux_map.push_back(aux_buffer);
+            } else {
+                aux_map.emplace_back("null");
+            }
         }
-        m_hash_key.push_back(str_num<unsigned int>(element_buffer[1]));
-        m_data.emplace(get_value(m_hash_key,(int)m_hash_key.size()-1), raw_buffer);
-        raw_buffer.clear();
-        element.clear();
-        //element_buffer.empty();
+        if (input_row.back() == ',') {
+            aux_map.emplace_back("null");
+        }
+        ir.clear();
+        //guardamos la fila de entrada en n hashmap con m_hash_key[1] como llave.
+        //m_hash_key[1] contiene el codigo de barras del producto
+        m_hash_key.push_back(get_key(aux_map, 1));
+        m_data.emplace(m_hash_key.back(), aux_map);
+        m_file_number++;
+        aux_map.clear();
+        input_row.clear();
+        aux_buffer.clear();
     }
     din.close();
-
-
-}
-void Data::save_report() {
-
-};
-
-Data::~Data(){
-    save_report();
 }
 
-std::string Data::get_element(int m, int n) {
-    std::string str_in= m_data.find(get_value(m_hash_key,m))->second, aux_buffer;
-//    Lista<std::string> aux;
-    std::list<std::string> aux;
-    std::stringstream ss(str_in);
-    while (getline(ss, aux_buffer, ',')){
-        aux.push_back(aux_buffer);
+/*std::string Data::get_element(unsigned int n, unsigned int m) {
+
+    return std::string();
+}*/
+
+std::string Data::get_key(std::list<std::string> &o_list, unsigned int n) {
+    auto it = o_list.begin();
+    std::advance(it, n);
+    return *it;
+}
+
+std::string Data::get_value(unsigned int n, unsigned int m) {
+
+    if(m==m_column_number-1){
+        auto it_n = m_hash_key.begin();
+        std::advance(it_n, n);
+        auto it_m = m_data.find(*it_n)->second.back();
+        return it_m;
+    }else {
+        auto it_n = m_hash_key.begin();
+        std::advance(it_n, n);
+        auto it_m = m_data.find(*it_n)->second.begin();
+        std::advance(it_m, m);
+        return *it_m;
     }
-    return get_value(aux,n);
 }
 
-std::string Data::get_row(int m) {
-    return m_data.find(get_value(m_hash_key,m))->second;
-}
+Data::~Data() = default;
+
+
+
