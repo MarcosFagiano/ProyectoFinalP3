@@ -1,6 +1,7 @@
 #ifndef U02_LISTAS_LISTA_LISTA_H_
 #define U02_LISTAS_LISTA_LISTA_H_
 #include "nodo.h"
+#include <iostream>
 
 /**
  * Clase que implementa una Lista Enlasada generica, ya que puede
@@ -38,6 +39,7 @@ public:
 
   void print();
 };
+
 
 /**
  * Constructor de la clase Lista
