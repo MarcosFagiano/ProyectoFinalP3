@@ -41,9 +41,9 @@ int  main(int argc, char **argv){
                 }
                 case 3: {
                     if (argc == 4) {
-                        obj_1.min_stock(str_num<unsigned int>(argv[2]));
+                        obj_1.min_stock(std::stoul(argv[2]));
                     } else if (argc == 5) {
-                        obj_1.min_stock(str_num<unsigned int>(argv[2]), str_num<unsigned int>(argv[3]));
+                        obj_1.min_stock(std::stoul(argv[2]), std::stoul(argv[3]));
                     }else{
                         argument_menu(argv);
                     }
@@ -53,14 +53,14 @@ int  main(int argc, char **argv){
                     if (argc == 4) {
                         obj_1.stock(argv[2]);
                     } else if (argc == 5) {
-                        obj_1.stock(argv[2], str_num<unsigned int>(argv[3]));
+                        obj_1.stock(argv[2], std::stoul(argv[3]));
                     }else{
                         argument_menu(argv);
                     }
                     break;
                 }
                 case 5: {
-                    obj_1.max_stock(str_num<unsigned int>(argv[2]));
+                    obj_1.max_stock(std::stoul(argv[2]));
                     break;
                 }
                 default: {

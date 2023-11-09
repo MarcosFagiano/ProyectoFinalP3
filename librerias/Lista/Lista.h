@@ -2,6 +2,7 @@
 #define U02_LISTAS_LISTA_LISTA_H_
 #include "nodo.h"
 #include <iostream>
+#include <cmath>
 
 /**
  * Clase que implementa una Lista Enlasada generica, ya que puede
@@ -38,6 +39,20 @@ public:
   void vaciar();
 
   void print();
+
+  int pos_max( int n);
+
+  int pos_min(int n);
+
+  void quickSort(int o_inicio, int fin, Lista<T>* l1, Lista<std::string>* l2);
+
+  void intercambiar(int a, int b);
+
+  int particion(int o_inicio, int fin, Lista<T>* l1, Lista<std::string>* l2);
+
+  void print_min(int n,Lista<std::string>*,Lista<int>*);
+
+  void print_max(int n,Lista<std::string>*,Lista<int>*);
 };
 
 
@@ -240,13 +255,151 @@ template <class T> void Lista<T>::vaciar() {
 
 template<class T>
 void Lista<T>::print() {
-    Nodo<T> *aux = inicio;
-
-    while (aux != nullptr) {
-        std::cout << aux->getDato() << "->";
-        aux = aux->getSiguiente();
+    Nodo<T> *auxNodo= inicio;
+    while(auxNodo!= nullptr){
+        std::cout<<auxNodo->getDato()<<"\n";
+        auxNodo=auxNodo->getSiguiente();
     }
-    std::cout << "NULL" << std::endl;
+    std::cout<<"\n";
+}
+
+template<class T>
+int Lista<T>::pos_max( int n) {
+    int parte1=ceil((getTamanio()-1)/4);
+    int parte2=parte1*2;
+    int parte3=parte1*3;
+    int caso[4]={-1,-1,-1,-1};
+
+    if(n<= getDato(0)){return 0;}
+
+    if(n> getDato(getTamanio()-1)){return -1;}
+
+
+    //nos fijamos si esta en el primer cuarto
+    if(n>=getDato(0) && n<=getDato(parte1)){
+        caso[0]=1;
+    }
+
+    //nos fijamos en el segundo cuarto
+    if(n>=getDato(parte1) && n<=getDato(parte2)){
+        caso[1]=1;
+    }
+
+    //nos fijamos en el tercer cuarto
+    if(n>=getDato(parte2) && n<=getDato(parte3)){
+        caso[2]=1;
+    }
+
+    //nos fijamos en el ultimo cuarto
+    if(n>=getDato(parte3) && n<=getDato(getTamanio()-1)){
+        caso[3]=1;
+    }
+    int aux;
+    if(caso[0]==1){
+        for(int i=0;i<parte1;i++){
+            if(getDato(i)==n){
+                return i;
+            }
+
+        }
+    }
+
+    if(caso[1]==1){
+        for(int i=parte1;i<parte2;i++){
+            if(getDato(i)==n){
+                return i;
+            }
+
+        }
+    }
+
+    if(caso[2]==1){
+        for(int i=parte2;i<parte3;i++){
+            if(getDato(i)==n){
+                return i;
+            }
+        }
+    }
+
+    if(caso[3]==1){
+        for(int i=parte3; i < getTamanio()-1; i++){
+
+            if(getDato(i)<n){
+                aux=i;
+            }
+        }
+    }
+    return (aux+1);
+}
+
+template<class T>
+void Lista<T>::quickSort(int o_inicio, int fin, Lista<T>* l1, Lista<std::string>* l2) {
+    if (o_inicio < fin) {
+        int pivot = particion(o_inicio, fin, l1, l2);
+
+        quickSort(o_inicio, pivot - 1, l1, l2);
+        quickSort(pivot + 1, fin, l1, l2);
+    }
+}
+
+template<class T>
+int Lista<T>::particion(int o_inicio, int fin, Lista<T>* l1, Lista<std::string>* l2) {
+    T pivot = l1->getDato(fin); // Usamos l1 para obtener el dato pivot
+    int i = o_inicio - 1;
+
+    for (int j = o_inicio; j < fin; j++) {
+        if (l1->getDato(j) < pivot) { // Usamos l1 para comparar
+            i++;
+            l1->intercambiar(i, j);
+            l2->intercambiar(i, j); // Intercambia en la segunda lista
+        }
+    }
+
+    l1->intercambiar(i + 1, fin);
+    l2->intercambiar(i + 1, fin); // Intercambia en la segunda lista
+    return i + 1;
+}
+
+
+template<class T>
+void Lista<T>::intercambiar(int a, int b) {
+    T temp = getDato(a);
+    reemplazar(a, getDato(b));
+    reemplazar(b, temp);
+}
+
+template<class T>
+int Lista<T>::pos_min(int n) {
+
+    if(n>= getDato(getTamanio()-1)){
+        return (getTamanio()-1);
+    }
+    if(n<getDato(0)){
+        return -1;
+    }
+
+    int x= pos_max(n+1);
+    if(getDato(x)!=n){
+        return(x-1);
+    }
+    if(getDato(x)==n){
+        return x;
+    }
+    return 0;
+}
+
+template<class T>
+void Lista<T>::print_min(int n,Lista<std::string> *name,Lista<int> *stock) {
+    for (int i=0;i<n;i++){
+        std::cout<<name->getDato(i)<<"----"<< stock->getDato(i)<<"\n";
+    }
+}
+
+template<class T>
+void Lista<T>::print_max(int n, Lista<std::string> *name, Lista<int> *stock) {
+    for (int i=n;i<(getTamanio());i++){
+        std::cout<<name->getDato(i)<<"----"<<stock->getDato(i)<<"\n";
+    }
 }
 
 #endif // U02_LISTAS_LISTA_LISTA_H_

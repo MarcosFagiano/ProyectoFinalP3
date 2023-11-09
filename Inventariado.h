@@ -26,7 +26,6 @@ public:
     void stock(const char *nombreArticulo, unsigned int numeroDeposito);
     void stock(const char *nombreArticulo);
 
-    void test();
 };
 
 
